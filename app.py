@@ -1,4 +1,8 @@
 from flask import Flask
+from admin.Admin import start_views
+from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
+
 
 def create_app(config):
     app = Flask(__name__)
@@ -8,8 +12,13 @@ def create_app(config):
     app.config.from_pyfile('config.py')
     app.config['SQLALCHEMY_DATABASE_URI'] = config.SQLALCHEMY_DATABASE_URI
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['FLASK_ADMIN_SWATCH'] = 'paper'
+    app.config['FLASK_ADMIN_SWATCH'] = 'paper' #Admin
+    db = SQLAlchemy(app) #Database
+    start_views(app, db) #Admin
+    Bootstrap(app) #Admin
 
+
+    db.init_app(app) #Database
     config.APP = app
 
     @app.after_request
