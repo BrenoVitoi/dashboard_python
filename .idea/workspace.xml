@@ -6,7 +6,10 @@
       <change beforePath="$PROJECT_DIR$/admin/Admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/Admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/Views.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/Views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/chart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

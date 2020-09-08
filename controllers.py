@@ -1,4 +1,4 @@
-from model import *
+from models import *
 from sqlalchemy import or_
 
 def login(email, password):
