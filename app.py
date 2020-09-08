@@ -1,7 +1,12 @@
-from flask import Flask
+from flask import Flask, request, redirect, render_template, Response, json, abort
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, login_user, logout_user
+from functools import wraps
 from admin.Admin import start_views
 from flask_bootstrap import Bootstrap
-from flask_sqlalchemy import SQLAlchemy
+import datetime
+import controllers as ctrl
+
 
 
 def create_app(config):
@@ -28,6 +33,10 @@ def create_app(config):
         response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
         return response
 
-    @app.route('/')
-    def index():
-        return 'oi'
+    @app.route('/report', methods=['POST'])
+    def report():
+        state = request.form['state']
+        disease = request.form['disease']
+        estadoSaude = request.form['estadoSaude']
+        patients = ctrl.reportByState(state, disease)
+        return Response(json.dumps(patients, ensure_ascii=False), mimetype='application/json'), 200, {}
